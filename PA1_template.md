@@ -18,7 +18,7 @@ This R Markdown file attempts to answer to the following questions of Project 1 
 
 Step 1 Load the Data into a suitable format assuming that the zip file has been downloaded and unzipped to the current working directory, then using dplyr create a subset summing the number of steps aggregated by date remebering to remove NA values.
 
-```{r echo = TRUE}
+```{r}
 library(dplyr)
 setwd("C:/Users/guyre_000/Documents")## Change as appropriate
 cls = c("integer", "character", "integer")
@@ -35,19 +35,19 @@ with(DailySteps, hist(steps,xlab="Steps",main="Total Steps per day"))
 
 Calculate mean and median steps per day
 
-```{r echo =TRUE}
+```{r echo =FALSE}
 mean(DailySteps$steps, na.rm=TRUE)
 median(DailySteps$steps)
 
 ```
 Average steps taken per day, create aggregated subset showing the average per day followed by plotting the 
-```{r echo =TRUE}
+```{r echo =FALSE}
 AVGDailySteps <- dataset %>% group_by(interval) %>% summarise(steps=mean(steps,na.rm=TRUE))
 with(AVGDailySteps,plot(interval,steps,type="l", xlab = "time interval", ylab = "Average steps", main = "Average steps taken over all days vs n time interval"),col = "blue")
 ```
 Determine the time interval where the  maximum number of steps occurs
 
-```{r echo = TRUE}
+```{r echo = FALSE}
 AVGDailySteps[AVGDailySteps$steps == max(AVGDailySteps$steps),1]
 ```
 Imputing Missing Values - Determine number of rows with NAs
