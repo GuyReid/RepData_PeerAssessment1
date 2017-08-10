@@ -139,7 +139,7 @@ library(dplyr)</code></pre>
 <pre><code>## The following objects are masked from 'package:base':
 ## 
 ##     intersect, setdiff, setequal, union</code></pre>
-<pre class="r"><code>setwd(&quot;C:/Users/guyre_000/Documents/DataScienceRPProject1&quot;)## Change as appropriate
+<pre class="r"><code>setwd(&quot;C:/Users/guyre_000/RepData_PeerAssessment1&quot;)## Change as appropriate
 cls = c(&quot;integer&quot;, &quot;character&quot;, &quot;integer&quot;)
 dataset &lt;- read.csv(&quot;activity.csv&quot;, head=TRUE, colClasses=cls, na.strings=&quot;NA&quot;)
 DailySteps &lt;- dataset %&gt;% group_by(date) %&gt;% summarise(steps=sum(steps,na.rm=TRUE))</code></pre>

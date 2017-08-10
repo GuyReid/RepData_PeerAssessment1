@@ -1,6 +1,6 @@
 ---
 title: "Activity Monitoring - Reproducable Research Project 1"
-author: "Guy Reid""
+author: "Guy Reid"
 date: "3 August 2017"
 output:
   html_document:
@@ -23,7 +23,7 @@ Step 1 Load the Data into a suitable format assuming that the zip file has been 
 ```{r echo = TRUE}
 library(knitr)
 library(dplyr)
-setwd("C:/Users/guyre_000/Documents/DataScienceRPProject1")## Change as appropriate
+setwd("C:/Users/guyre_000/RepData_PeerAssessment1")## Change as appropriate
 cls = c("integer", "character", "integer")
 dataset <- read.csv("activity.csv", head=TRUE, colClasses=cls, na.strings="NA")
 DailySteps <- dataset %>% group_by(date) %>% summarise(steps=sum(steps,na.rm=TRUE))

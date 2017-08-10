@@ -1,6 +1,6 @@
 # Activity Monitoring - Reproducable Research Project 1
 Guy Reid  
-3 August 2017
+3 August 2017  
 
 
 This R Markdown file attempts to answer to the following questions of Project 1 of Reproducible Research, based on activity monitoring data downloaded from the following source "https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip"
@@ -39,7 +39,7 @@ library(dplyr)
 ```
 
 ```r
-setwd("C:/Users/guyre_000/Documents/DataScienceRPProject1")## Change as appropriate
+setwd("C:/Users/guyre_000/RepData_PeerAssessment1")## Change as appropriate
 cls = c("integer", "character", "integer")
 dataset <- read.csv("activity.csv", head=TRUE, colClasses=cls, na.strings="NA")
 DailySteps <- dataset %>% group_by(date) %>% summarise(steps=sum(steps,na.rm=TRUE))
